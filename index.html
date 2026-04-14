@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Banco de Sangre y LCPM | Dr. Guillermo Manera</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:wght@700;900&display=swap');
+        
+        :root {
+            --medical-blue: #0f172a;
+            --action-red: #e11d48;
+            --soft-bg: #f8fafc;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            color: #1e293b;
+            background-color: var(--soft-bg);
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+        }
+
+        .glass-nav {
+            background: rgba(248, 250, 252, 0.9);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(226, 232, 240, 0.8);
+        }
+
+        .hero-gradient {
+            background: radial-gradient(circle at 0% 0%, #1e3a8a 0%, #0f172a 100%);
+        }
+
+        .medical-pattern {
+            background-image: radial-gradient(#334155 0.5px, transparent 0.5px);
+            background-size: 24px 24px;
+            opacity: 0.1;
+        }
+
+        .card-premium {
+            background: white;
+            border: 1px solid #f1f5f9;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .card-premium:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.05);
+            border-color: #e2e8f0;
+        }
+
+        .step-number {
+            font-family: 'Playfair Display', serif;
+        }
+
+        /* Status animations */
+        .pulse-green {
+            box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.4);
+            animation: pulse-green 2s infinite;
+        }
+        @keyframes pulse-green {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 10px rgba(34, 197, 94, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(34, 197, 94, 0); }
+        }
+
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #f1f5f9; }
+        ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 10px; }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Navegación -->
+    <nav class="fixed w-full z-50 glass-nav">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="flex items-center space-x-3">
+                <div class="w-10 h-10 bg-rose-600 rounded-xl flex items-center justify-center text-white shadow-lg rotate-3">
+                    <i class="fas fa-droplet text-xl"></i>
+                </div>
+                <div>
+                    <span class="block font-extrabold text-slate-900 leading-none text-lg tracking-tight uppercase">Banco de Sangre</span>
+                    <span class="text-[9px] text-rose-600 font-bold uppercase tracking-[0.3em]">Puerto Madryn</span>
+                </div>
+            </div>
+            
+            <div class="hidden lg:flex items-center space-x-10 font-bold text-[11px] text-slate-500 uppercase tracking-widest">
+                <a href="#inicio" class="hover:text-rose-600 transition-colors">Inicio</a>
+                <a href="#institucion" class="hover:text-rose-600 transition-colors">Institución</a>
+                <a href="#servicios" class="hover:text-rose-600 transition-colors">Servicios</a>
+                <a href="#donantes" class="hover:text-rose-600 transition-colors">Guía Donante</a>
+            </div>
+
+            <div class="flex items-center space-x-4">
+                <div id="status-header" class="hidden sm:flex items-center space-x-2 px-3 py-1.5 rounded-full border border-slate-200 text-[10px] font-bold uppercase tracking-wider">
+                    <!-- Status JS -->
+                </div>
+                <a href="https://wa.me/5492804707181" target="_blank" class="bg-slate-900 text-white px-6 py-3 rounded-full text-xs font-bold shadow-xl hover:bg-rose-600 transition-all active:scale-95">
+                    CONTACTO <i class="fab fa-whatsapp ml-2"></i>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="hero-gradient min-h-[90vh] flex items-center relative overflow-hidden">
+        <div class="absolute inset-0 medical-pattern"></div>
+        <div class="container mx-auto px-6 pt-32 pb-20 relative z-10">
+            <div class="max-w-4xl">
+                <div class="inline-flex items-center space-x-3 px-4 py-2 bg-white/5 border border-white/10 rounded-full mb-8">
+                    <span class="relative flex h-2 w-2">
+                        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-rose-400 opacity-75"></span>
+                        <span class="relative inline-flex rounded-full h-2 w-2 bg-rose-500"></span>
+                    </span>
+                    <span class="text-white/80 text-[10px] font-bold uppercase tracking-widest">Servicio de Hemoterapia & Bioquímica</span>
+                </div>
+                
+                <h1 class="text-5xl lg:text-8xl font-black text-white mb-8 leading-[1]">
+                    Excelencia <br> <span class="text-rose-500">Hematológica.</span>
+                </h1>
+                
+                <p class="text-lg lg:text-xl text-slate-400 mb-12 max-w-2xl leading-relaxed">
+                    Bajo la dirección del <strong>Dr. Guillermo Manera</strong>, transformamos el diagnóstico clínico en bienestar para la comunidad de Puerto Madryn a través de 30 años de experiencia.
+                </p>
+
+                <div class="flex flex-wrap gap-6">
+                    <a href="#donantes" class="bg-rose-600 text-white px-10 py-5 rounded-2xl font-bold hover:bg-rose-700 transition-all shadow-2xl shadow-rose-600/20">
+                        Convertirme en Donante
+                    </a>
+                    <div class="flex items-center space-x-4 bg-white/5 p-4 rounded-2xl border border-white/10">
+                        <div class="w-12 h-12 bg-white/10 rounded-xl flex items-center justify-center text-rose-500">
+                            <i class="fas fa-microscope text-2xl"></i>
+                        </div>
+                        <div>
+                            <p class="text-white font-bold text-sm">Laboratorio LCPM</p>
+                            <p class="text-slate-400 text-xs">Alta Complejidad Regional</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="absolute right-0 bottom-0 opacity-10 hidden lg:block translate-y-1/4 translate-x-1/4">
+            <i class="fas fa-droplet text-[500px] text-white"></i>
+        </div>
+    </section>
+
+    <!-- Info Bar -->
+    <section class="container mx-auto px-6 py-8 relative z-20">
+        <div class="grid grid-cols-1 md:grid-cols-3 bg-white rounded-[2.5rem] shadow-2xl overflow-hidden border border-slate-100 -mt-20">
+            <div class="p-10 border-r border-slate-50 flex flex-col justify-center">
+                <div class="flex justify-between items-center mb-3">
+                    <p class="text-[10px] font-black text-rose-600 uppercase tracking-[0.3em]">Atención</p>
+                    <div id="status-badge" class="px-2 py-0.5 rounded-md text-[9px] font-bold"></div>
+                </div>
+                <p class="text-xl font-bold text-slate-900">Lun a Vie <span class="text-slate-400 font-normal ml-2">08:00 — 20:00</span></p>
+            </div>
+            <div class="p-10 border-r border-slate-50 bg-slate-50/50 flex flex-col justify-center">
+                <p class="text-[10px] font-black text-rose-600 uppercase tracking-[0.3em] mb-3">Ubicación</p>
+                <p class="text-xl font-bold text-slate-900">Estivariz 260 <span class="text-slate-400 font-normal ml-2">P. Madryn</span></p>
+            </div>
+            <div class="p-10 flex flex-col justify-center">
+                <p class="text-[10px] font-black text-rose-600 uppercase tracking-[0.3em] mb-3">Contacto</p>
+                <p class="text-xl font-bold text-slate-900">2804 707181 <span class="text-slate-400 font-normal ml-2">Directo</span></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Institución -->
+    <section id="institucion" class="py-24">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col lg:flex-row gap-20 items-center">
+                <div class="lg:w-1/2">
+                    <h2 class="text-5xl font-black text-slate-900 mb-8 leading-tight">Ciencia aplicada con <span class="italic text-slate-400">calidad humana.</span></h2>
+                    <p class="text-slate-600 text-lg leading-relaxed mb-10">
+                        El Banco de Sangre opera en conjunto con el <strong>Laboratorio Clínico Puerto Madryn (LCPM)</strong>. Nuestra estructura nos permite realizar desde análisis de rutina hasta pruebas hematológicas de extrema especialización bajo la supervisión del Dr. Manera.
+                    </p>
+                    
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <div class="p-8 bg-white border border-slate-100 rounded-3xl card-premium">
+                            <i class="fas fa-award text-rose-600 text-2xl mb-4"></i>
+                            <h4 class="font-extrabold text-slate-900 mb-2">Trayectoria</h4>
+                            <p class="text-sm text-slate-500 italic">Formación UBA & Sociedad Argentina de Hematología.</p>
+                        </div>
+                        <div class="p-8 bg-white border border-slate-100 rounded-3xl card-premium">
+                            <i class="fas fa-vials text-blue-600 text-2xl mb-4"></i>
+                            <h4 class="font-extrabold text-slate-900 mb-2">Especialistas</h4>
+                            <p class="text-sm text-slate-500">Bioquímicas de las universidades UNC, UNS y UBA.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="lg:w-1/2 grid grid-cols-2 gap-6 w-full">
+                    <div class="space-y-6 pt-12">
+                        <div class="h-64 bg-slate-900 rounded-[2.5rem] flex items-center justify-center text-rose-500 shadow-xl">
+                            <i class="fas fa-heart-pulse text-6xl"></i>
+                        </div>
+                        <div class="p-8 bg-rose-600 rounded-[2.5rem] text-white">
+                            <span class="text-3xl font-black block mb-2">+30</span>
+                            <span class="text-xs font-bold uppercase tracking-widest opacity-80">Años de Servicio</span>
+                        </div>
+                    </div>
+                    <div class="space-y-6">
+                        <div class="p-8 bg-blue-50 rounded-[2.5rem]">
+                            <h4 class="font-black text-slate-900 mb-4">Staff Médico</h4>
+                            <ul class="text-[10px] space-y-4 font-bold text-slate-600 uppercase tracking-widest">
+                                <li class="flex items-center"><span class="w-1.5 h-1.5 bg-blue-600 rounded-full mr-3"></span> Mariana Pretell</li>
+                                <li class="flex items-center"><span class="w-1.5 h-1.5 bg-blue-600 rounded-full mr-3"></span> Romina Rust</li>
+                                <li class="flex items-center"><span class="w-1.5 h-1.5 bg-blue-600 rounded-full mr-3"></span> Constanza Marina</li>
+                            </ul>
+                        </div>
+                        <div class="h-64 bg-slate-100 rounded-[2.5rem] flex items-center justify-center text-slate-300">
+                            <i class="fas fa-dna text-6xl"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Guía del Donante -->
+    <section id="donantes" class="py-24 bg-slate-900 text-white rounded-[4rem] mx-4 overflow-hidden relative">
+        <div class="absolute inset-0 medical-pattern opacity-5"></div>
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="max-w-3xl mb-20">
+                <span class="text-rose-500 font-black tracking-[0.4em] uppercase text-[10px]">Protocolo Comunitario</span>
+                <h2 class="text-5xl font-black mt-4 mb-8">Guía Integral del Donante</h2>
+                <p class="text-slate-400 text-lg">Tu donación es el recurso más valioso para la salud regional. El proceso es seguro, estéril y se realiza bajo estrictos controles médicos.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-20">
+                <div class="group border-t border-white/10 pt-8">
+                    <div class="step-number text-7xl text-white/5 group-hover:text-rose-600/20 transition-colors">01</div>
+                    <h3 class="text-xl font-bold -mt-8 mb-4">Requisitos Base</h3>
+                    <ul class="text-xs text-slate-400 space-y-4 leading-relaxed">
+                        <li><i class="fas fa-check text-rose-500 mr-2"></i> Tener entre 18 y 65 años.</li>
+                        <li><i class="fas fa-check text-rose-500 mr-2"></i> Pesar más de 50 kg.</li>
+                        <li><i class="fas fa-check text-rose-500 mr-2"></i> Presentar DNI original.</li>
+                        <li><i class="fas fa-check text-rose-500 mr-2"></i> Gozar de buena salud general.</li>
+                    </ul>
+                </div>
+                <div class="group border-t border-white/10 pt-8">
+                    <div class="step-number text-7xl text-white/5 group-hover:text-blue-500/20 transition-colors">02</div>
+                    <h3 class="text-xl font-bold -mt-8 mb-4">Preparación</h3>
+                    <ul class="text-xs text-slate-400 space-y-4 leading-relaxed">
+                        <li><i class="fas fa-check text-blue-500 mr-2"></i> Desayuno liviano (sin lácteos).</li>
+                        <li><i class="fas fa-check text-blue-500 mr-2"></i> Tomar abundante agua previa.</li>
+                        <li><i class="fas fa-check text-blue-500 mr-2"></i> No consumir alcohol por 12hs.</li>
+                        <li><i class="fas fa-check text-blue-500 mr-2"></i> Dormir al menos 6 horas.</li>
+                    </ul>
+                </div>
+                <div class="group border-t border-white/10 pt-8">
+                    <div class="step-number text-7xl text-white/5 group-hover:text-rose-600/20 transition-colors">03</div>
+                    <h3 class="text-xl font-bold -mt-8 mb-4">Impedimentos</h3>
+                    <ul class="text-xs text-slate-400 space-y-4 leading-relaxed">
+                        <li><i class="fas fa-check text-rose-500 mr-2"></i> Tatuajes: esperar 12 meses.</li>
+                        <li><i class="fas fa-check text-rose-500 mr-2"></i> Cirugías: avisar al médico.</li>
+                        <li><i class="fas fa-check text-rose-500 mr-2"></i> Medicación: traer nombre.</li>
+                        <li><i class="fas fa-check text-rose-500 mr-2"></i> No haber tenido fiebre reciente.</li>
+                    </ul>
+                </div>
+                <div class="group border-t border-white/10 pt-8">
+                    <div class="step-number text-7xl text-white/5 group-hover:text-blue-500/20 transition-colors">04</div>
+                    <h3 class="text-xl font-bold -mt-8 mb-4">Post-Cuidado</h3>
+                    <ul class="text-xs text-slate-400 space-y-4 leading-relaxed">
+                        <li><i class="fas fa-check text-blue-500 mr-2"></i> Reposo de 15 min en sala.</li>
+                        <li><i class="fas fa-check text-blue-500 mr-2"></i> Refrigerio de cortesía.</li>
+                        <li><i class="fas fa-check text-blue-500 mr-2"></i> No fumar por 2 horas.</li>
+                        <li><i class="fas fa-check text-blue-500 mr-2"></i> Evitar esfuerzos físicos.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="bg-white/5 border border-white/10 p-12 rounded-[3rem] text-center lg:text-left flex flex-col lg:flex-row items-center justify-between gap-8">
+                <div>
+                    <h4 class="text-2xl font-black mb-2">Frecuencia de Donación</h4>
+                    <p class="text-slate-400 text-sm">Hombres: hasta 4 veces al año. Mujeres: hasta 3 veces al año. Intervalo mínimo de 2 meses.</p>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <div class="w-12 h-12 bg-rose-600/20 text-rose-500 rounded-full flex items-center justify-center">
+                        <i class="fas fa-calendar-check"></i>
+                    </div>
+                    <span class="font-bold text-sm tracking-widest uppercase">Agenda tu visita al 2804 707181</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mapa -->
+    <section class="py-24">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-5xl font-black text-slate-900 mb-4">Acceso Directo</h2>
+                <p class="text-slate-500 font-medium">Ubicados estratégicamente en la calle Estivariz.</p>
+            </div>
+            <div class="w-full h-[500px] rounded-[3rem] overflow-hidden shadow-2xl border-[12px] border-white relative z-10">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2936.786523956108!2d-65.041697384536!3d-42.76632947916164!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xbe15502758f80695%3A0x8e8e7440938f654f!2sEstivariz%20260%2C%20U9120%20Puerto%20Madryn%2C%20Chubut!5e0!3m2!1ses!2sar!4v1700000000000!5m2!1ses!2sar" 
+                    width="100%" 
+                    height="100%" 
+                    style="border:0;" 
+                    allowfullscreen="" 
+                    loading="lazy">
+                </iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contacto -->
+    <section class="py-24 bg-slate-50">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white p-12 rounded-[3rem] border border-slate-100 card-premium">
+                    <div class="w-14 h-14 bg-blue-50 text-blue-600 rounded-2xl flex items-center justify-center mb-8">
+                        <i class="fas fa-phone-alt"></i>
+                    </div>
+                    <h4 class="text-[10px] font-black text-slate-400 uppercase tracking-widest mb-2">Llamadas</h4>
+                    <p class="text-xl font-bold text-slate-900">0280 4456000</p>
+                </div>
+                <div class="bg-white p-12 rounded-[3rem] border border-slate-100 card-premium">
+                    <div class="w-14 h-14 bg-green-50 text-green-600 rounded-2xl flex items-center justify-center mb-8">
+                        <i class="fab fa-whatsapp"></i>
+                    </div>
+                    <h4 class="text-[10px] font-black text-slate-400 uppercase tracking-widest mb-2">WhatsApp</h4>
+                    <p class="text-xl font-bold text-slate-900">2804 707181</p>
+                </div>
+                <div class="bg-white p-12 rounded-[3rem] border border-slate-100 card-premium">
+                    <div class="w-14 h-14 bg-rose-50 text-rose-600 rounded-2xl flex items-center justify-center mb-8">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <h4 class="text-[10px] font-black text-slate-400 uppercase tracking-widest mb-2">Correo</h4>
+                    <p class="text-sm font-bold text-slate-900 break-words">secretariabspm@gmail.com</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-white pt-24 pb-12">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col lg:flex-row justify-between gap-16 mb-20">
+                <div class="lg:w-1/3">
+                    <div class="flex items-center space-x-3 mb-8">
+                        <div class="w-10 h-10 bg-rose-600 rounded-xl flex items-center justify-center">
+                            <i class="fas fa-droplet text-xl"></i>
+                        </div>
+                        <span class="font-black text-2xl tracking-tighter uppercase">Banco de Sangre</span>
+                    </div>
+                    <p class="text-slate-500 leading-relaxed italic text-sm">
+                        "La excelencia bioquímica y la seguridad transfusional son nuestra prioridad absoluta desde hace tres décadas en la Patagonia".
+                    </p>
+                </div>
+                
+                <div class="grid grid-cols-2 sm:grid-cols-2 gap-16">
+                    <div>
+                        <h5 class="font-bold mb-6 text-white uppercase tracking-widest text-xs">Atención</h5>
+                        <ul class="text-slate-500 space-y-4 text-xs font-bold uppercase tracking-wider">
+                            <li>Lunes a Viernes</li>
+                            <li class="text-white">08:00 — 20:00</li>
+                            <li>Estivariz 260</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h5 class="font-bold mb-6 text-white uppercase tracking-widest text-xs">Menu</h5>
+                        <ul class="text-slate-500 space-y-4 text-xs font-bold tracking-widest uppercase">
+                            <li><a href="#inicio" class="hover:text-rose-500">Inicio</a></li>
+                            <li><a href="#donantes" class="hover:text-rose-500">Guía</a></li>
+                            <li><a href="#institucion" class="hover:text-rose-500">Staff</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6">
+                <p class="text-slate-600 text-[9px] font-bold uppercase tracking-[0.4em]">Puerto Madryn, Chubut — Patagonia Argentina 2025</p>
+                <div class="flex space-x-6 text-slate-500">
+                    <a href="#" class="hover:text-rose-500"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="hover:text-blue-500"><i class="fab fa-facebook"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Floating -->
+    <a href="https://wa.me/5492804707181" target="_blank" class="fixed bottom-10 right-10 bg-green-500 text-white w-16 h-16 rounded-3xl flex items-center justify-center shadow-2xl hover:scale-110 active:scale-95 transition-all z-50">
+        <i class="fab fa-whatsapp text-3xl"></i>
+    </a>
+
+    <script>
+        function updateBusinessStatus() {
+            const now = new Date();
+            const day = now.getDay(); // 0: Sun, 1: Mon, ..., 6: Sat
+            const hour = now.getHours();
+            const minutes = now.getMinutes();
+            
+            const headerStatus = document.getElementById('status-header');
+            const badgeStatus = document.getElementById('status-badge');
+            
+            // Abierto de Lunes (1) a Viernes (5) entre las 08:00 y las 20:00
+            const isOpen = (day >= 1 && day <= 5) && (hour >= 8 && hour < 20);
+            
+            if (isOpen) {
+                const content = `
+                    <span class="w-2 h-2 bg-green-500 rounded-full pulse-green"></span>
+                    <span class="text-slate-700">Abierto ahora</span>
+                `;
+                headerStatus.innerHTML = content;
+                headerStatus.classList.remove('border-slate-200');
+                headerStatus.classList.add('border-green-200', 'bg-green-50/50');
+                
+                badgeStatus.innerText = "ABIERTO";
+                badgeStatus.className = "px-2 py-0.5 rounded-md text-[9px] font-bold bg-green-100 text-green-700";
+            } else {
+                const content = `
+                    <span class="w-2 h-2 bg-rose-500 rounded-full"></span>
+                    <span class="text-slate-700">Cerrado</span>
+                `;
+                headerStatus.innerHTML = content;
+                headerStatus.classList.remove('border-slate-200');
+                headerStatus.classList.add('border-rose-100', 'bg-rose-50/30');
+                
+                badgeStatus.innerText = "CERRADO";
+                badgeStatus.className = "px-2 py-0.5 rounded-md text-[9px] font-bold bg-rose-100 text-rose-700";
+            }
+        }
+
+        // Ejecutar al cargar y cada minuto
+        window.onload = updateBusinessStatus;
+        setInterval(updateBusinessStatus, 60000);
+    </script>
+
+</body>
+</html>
