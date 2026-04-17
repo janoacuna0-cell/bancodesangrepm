@@ -100,9 +100,6 @@
                 <div id="status-header" class="hidden sm:flex items-center space-x-2 px-3 py-1.5 rounded-full border border-slate-200 text-[10px] font-bold uppercase tracking-wider">
                     <!-- Status JS -->
                 </div>
-                <a href="https://wa.me/5492804707181" target="_blank" class="bg-slate-900 text-white px-6 py-3 rounded-full text-xs font-bold shadow-xl hover:bg-rose-600 transition-all active:scale-95">
-                    CONTACTO <i class="fab fa-whatsapp ml-2"></i>
-                </a>
             </div>
         </div>
     </nav>
@@ -152,7 +149,7 @@
 
     <!-- Info Bar -->
     <section class="container mx-auto px-6 py-8 relative z-20">
-        <div class="grid grid-cols-1 md:grid-cols-3 bg-white rounded-[2.5rem] shadow-2xl overflow-hidden border border-slate-100 -mt-20">
+        <div class="grid grid-cols-1 md:grid-cols-2 bg-white rounded-[2.5rem] shadow-2xl overflow-hidden border border-slate-100 -mt-20">
             <div class="p-10 border-r border-slate-50 flex flex-col justify-center">
                 <div class="flex justify-between items-center mb-3">
                     <p class="text-[10px] font-black text-rose-600 uppercase tracking-[0.3em]">Atención</p>
@@ -160,13 +157,9 @@
                 </div>
                 <p class="text-xl font-bold text-slate-900">Lun a Vie <span class="text-slate-400 font-normal ml-2">08:00 — 20:00</span></p>
             </div>
-            <div class="p-10 border-r border-slate-50 bg-slate-50/50 flex flex-col justify-center">
+            <div class="p-10 flex flex-col justify-center bg-slate-50/50">
                 <p class="text-[10px] font-black text-rose-600 uppercase tracking-[0.3em] mb-3">Ubicación</p>
                 <p class="text-xl font-bold text-slate-900">Estivariz 260 <span class="text-slate-400 font-normal ml-2">P. Madryn</span></p>
-            </div>
-            <div class="p-10 flex flex-col justify-center">
-                <p class="text-[10px] font-black text-rose-600 uppercase tracking-[0.3em] mb-3">Contacto</p>
-                <p class="text-xl font-bold text-slate-900">2804 707181 <span class="text-slate-400 font-normal ml-2">Directo</span></p>
             </div>
         </div>
     </section>
@@ -276,17 +269,42 @@
                 </div>
             </div>
 
-            <div class="bg-white/5 border border-white/10 p-12 rounded-[3rem] text-center lg:text-left flex flex-col lg:flex-row items-center justify-between gap-8">
-                <div>
-                    <h4 class="text-2xl font-black mb-2">Frecuencia de Donación</h4>
-                    <p class="text-slate-400 text-sm">Hombres: hasta 4 veces al año. Mujeres: hasta 3 veces al año. Intervalo mínimo de 2 meses.</p>
+            <div class="bg-slate-800/50 border border-white/5 rounded-[3rem] p-10 lg:p-16 mb-12">
+                <div class="max-w-2xl mb-10">
+                    <span class="text-blue-500 font-black tracking-[0.3em] uppercase text-[10px]">¿Cómo es el procedimiento?</span>
+                    <h3 class="text-3xl font-black mt-2">El Proceso de Extracción</h3>
+                    <p class="text-slate-400 text-sm mt-3">Es rápido, seguro e indoloro, diseñado bajo estrictos controles.</p>
                 </div>
-                <div class="flex items-center space-x-4">
-                    <div class="w-12 h-12 bg-rose-600/20 text-rose-500 rounded-full flex items-center justify-center">
-                        <i class="fas fa-calendar-check"></i>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="relative">
+                        <div class="w-10 h-10 bg-blue-500/10 text-blue-500 flex items-center justify-center rounded-xl mb-4">
+                            <i class="fas fa-clipboard-list"></i>
+                        </div>
+                        <h4 class="font-bold text-white mb-2">1. Entrevista Clínica</h4>
+                        <p class="text-slate-400 text-xs leading-relaxed">Cuestionario confidencial para evaluar signos vitales y factores de riesgo según la Ley Nacional de Sangre.</p>
                     </div>
-                    <span class="font-bold text-sm tracking-widest uppercase">Agenda tu visita al 2804 707181</span>
+                    <div class="relative">
+                        <div class="w-10 h-10 bg-rose-500/10 text-rose-500 flex items-center justify-center rounded-xl mb-4">
+                            <i class="fas fa-vial"></i>
+                        </div>
+                        <h4 class="font-bold text-white mb-2">2. Extracción Secuencial</h4>
+                        <p class="text-slate-400 text-xs leading-relaxed">Demora aprox. 10 minutos. Se extraen unos 450 ml empleando exclusivamente material descartable y de un único uso.</p>
+                    </div>
+                    <div class="relative">
+                        <div class="w-10 h-10 bg-green-500/10 text-green-500 flex items-center justify-center rounded-xl mb-4">
+                            <i class="fas fa-mug-hot"></i>
+                        </div>
+                        <h4 class="font-bold text-white mb-2">3. Reposo y Refrigerio</h4>
+                        <p class="text-slate-400 text-xs leading-relaxed">Tras un descanso en sala, te brindaremos un refrigerio ligero mientras el volumen sanguíneo comienza su recuperación natural.</p>
+                    </div>
                 </div>
+            </div>
+
+            <div class="bg-white/5 border border-white/10 p-12 rounded-[3rem] text-center flex flex-col items-center justify-center">
+                <h4 class="text-2xl font-black mb-3">Frecuencia de Donación</h4>
+                <p class="text-slate-400 text-sm max-w-2xl mx-auto">
+                    El cuerpo repone la sangre rápidamente. Los <strong>hombres</strong> pueden donar hasta 4 veces al año, mientras que las <strong>mujeres</strong> pueden hacerlo hasta 3 veces al año. Siempre debe transcurrir un intervalo mínimo de 2 meses entre cada donación.
+                </p>
             </div>
         </div>
     </section>
@@ -314,26 +332,19 @@
     <!-- Contacto -->
     <section class="py-24 bg-slate-50">
         <div class="container mx-auto px-6">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="bg-white p-12 rounded-[3rem] border border-slate-100 card-premium">
-                    <div class="w-14 h-14 bg-blue-50 text-blue-600 rounded-2xl flex items-center justify-center mb-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                <div class="bg-white p-12 rounded-[3rem] border border-slate-100 card-premium text-center">
+                    <div class="w-14 h-14 bg-blue-50 text-blue-600 rounded-2xl flex items-center justify-center mx-auto mb-8">
                         <i class="fas fa-phone-alt"></i>
                     </div>
-                    <h4 class="text-[10px] font-black text-slate-400 uppercase tracking-widest mb-2">Llamadas</h4>
+                    <h4 class="text-[10px] font-black text-slate-400 uppercase tracking-widest mb-2">Teléfono</h4>
                     <p class="text-xl font-bold text-slate-900">0280 4456000</p>
                 </div>
-                <div class="bg-white p-12 rounded-[3rem] border border-slate-100 card-premium">
-                    <div class="w-14 h-14 bg-green-50 text-green-600 rounded-2xl flex items-center justify-center mb-8">
-                        <i class="fab fa-whatsapp"></i>
-                    </div>
-                    <h4 class="text-[10px] font-black text-slate-400 uppercase tracking-widest mb-2">WhatsApp</h4>
-                    <p class="text-xl font-bold text-slate-900">2804 707181</p>
-                </div>
-                <div class="bg-white p-12 rounded-[3rem] border border-slate-100 card-premium">
-                    <div class="w-14 h-14 bg-rose-50 text-rose-600 rounded-2xl flex items-center justify-center mb-8">
+                <div class="bg-white p-12 rounded-[3rem] border border-slate-100 card-premium text-center">
+                    <div class="w-14 h-14 bg-rose-50 text-rose-600 rounded-2xl flex items-center justify-center mx-auto mb-8">
                         <i class="fas fa-envelope"></i>
                     </div>
-                    <h4 class="text-[10px] font-black text-slate-400 uppercase tracking-widest mb-2">Correo</h4>
+                    <h4 class="text-[10px] font-black text-slate-400 uppercase tracking-widest mb-2">Correo Institucional</h4>
                     <p class="text-sm font-bold text-slate-900 break-words">secretariabspm@gmail.com</p>
                 </div>
             </div>
@@ -377,7 +388,10 @@
             </div>
             
             <div class="pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6">
-                <p class="text-slate-600 text-[9px] font-bold uppercase tracking-[0.4em]">Puerto Madryn, Chubut — Patagonia Argentina 2025</p>
+                <p class="text-slate-600 text-[9px] font-bold uppercase tracking-[0.4em]">
+                    Puerto Madryn, Chubut — Patagonia Argentina 2025<br>
+                    <a href="https://studio-portfolio-two.vercel.app/" target="_blank" rel="noopener noreferrer" class="hover:text-rose-500 transition-colors mt-2 inline-block" style="text-transform: none; font-size: 11px; letter-spacing: 1px;">creado por studio.</a>
+                </p>
                 <div class="flex space-x-6 text-slate-500">
                     <a href="#" class="hover:text-rose-500"><i class="fab fa-instagram"></i></a>
                     <a href="#" class="hover:text-blue-500"><i class="fab fa-facebook"></i></a>
@@ -386,10 +400,7 @@
         </div>
     </footer>
 
-    <!-- WhatsApp Floating -->
-    <a href="https://wa.me/5492804707181" target="_blank" class="fixed bottom-10 right-10 bg-green-500 text-white w-16 h-16 rounded-3xl flex items-center justify-center shadow-2xl hover:scale-110 active:scale-95 transition-all z-50">
-        <i class="fab fa-whatsapp text-3xl"></i>
-    </a>
+
 
     <script>
         function updateBusinessStatus() {
